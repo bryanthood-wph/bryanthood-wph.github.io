@@ -1,74 +1,147 @@
-<!DOCTYPE html>
+c<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[YOUR_NAME] | [TAGLINE_OR_FOCUS]</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body {
-      font-family: "Inter", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #222;
-      background-color: #fafafa;
-      text-align: center;
-    }
-    header, footer {
-      background: #111;
-      color: #eee;
-      padding: 20px;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    nav a {
-      color: #80c7ff;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    iframe {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryant Colby Hood | AI Automation & FinOps Portfolio</title>
+
+    <!-- Basic styling for readability and layout -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #222;
+        }
+        header {
+            background-color: #111;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 4px solid #2ecc71;
+        }
+        nav a {
+            color: #2ecc71;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #111;
+            color: #aaa;
+            font-size: 14px;
+        }
+        h1, h2, h3 {
+            color: #111;
+        }
+        .highlight {
+            color: #2ecc71;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>[YOUR_NAME]</h1>
-    <p>[YOUR_TAGLINE_OR_SPECIALTIES]</p>
+
+<!-- ========================= HEADER ========================= -->
+<header>
+    <h1>Bryant “Colby” Hood</h1>
+    <p>Finance Ops Leader | AI Automation Builder | Analytics Engineer</p>
+    <!-- Simple navigation bar linking to internal sections -->
     <nav>
-      <a href="about.html">About</a> |
-      <a href="[LINK_TO_PROJECTS_OR_PORTFOLIO]" target="_blank">Projects</a> |
-      <a href="[LINK_TO_GITHUB]" target="_blank">GitHub</a> |
-      <a href="[LINK_TO_OTHER_PLATFORM]" target="_blank">[PLATFORM_NAME]</a>
+        <a href="#about">About</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#contact">Contact</a> |
+        <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a>
     </nav>
-  </header>
+</header>
 
-  <section>
+<!-- ========================= ABOUT SECTION ========================= -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I’m a <strong>Finance Operations leader</strong> at Amazon, driving automation and analytics
+        across Retail AR, contra-COGS, and global FinOps programs. I’m obsessed with using 
+        <strong>data, RPA, and AI workflows</strong> to make large-scale business processes faster, 
+        smarter, and more controllable.
+    </p>
+    <p>
+        Over the last decade, I’ve led teams and built systems across <strong>retail, analytics, 
+        and operations</strong> at organizations like Amazon, Academy Sports + Outdoors, and Lowe’s.  
+        I specialize in integrating <strong>Python, Power Query, DAX, Quicksight, UiPath, and LLM-based automations</strong> 
+        to streamline workflows and reduce friction between finance and tech.
+    </p>
+    <ul>
+        <li>⚙️ RPA: UiPath, n8n, Zapier</li>
+        <li>📊 Data Analytics: Power Query, DAX, Quicksight, Excel modeling</li>
+        <li>🤖 AI Agents: Hugging Face, OpenAI API, Gradio</li>
+        <li>💡 Process Optimization & Decision Automation</li>
+    </ul>
+</section>
+
+<!-- ========================= FEATURED PROJECT SECTION ========================= -->
+<section id="projects">
     <h2>Featured Project</h2>
-    <div class="project">
-      <h3><a href="[PROJECT_PAGE_LINK]">[PROJECT_TITLE]</a></h3>
-      <p>
-        [SHORT_DESCRIPTION_OF_PROJECT]  
-        Built using <strong>[TECH_STACK]</strong>, deployed on <strong>[DEPLOYMENT_PLATFORM]</strong>.
-      </p>
-      <iframe
-        src="[EMBED_URL_OR_DEMO_LINK]"
-        width="100%"
-        height="500"
-        title="[PROJECT_TITLE]">
-      </iframe>
-    </div>
-  </section>
+    <h3 class="highlight">Juke Joint ChatBot</h3>
+    <p>
+        A conversational AI assistant that blends humor, personality, and domain knowledge to 
+        deliver real-time insights for small business operators.  
+        <br><strong>Built using:</strong> GPT-4o, Gradio, and Python.  
+        <br><strong>Deployed on:</strong> Hugging Face Spaces.
+    </p>
 
-  <footer>
-    <p>© [YEAR] [YOUR_NAME] | [OPTIONAL_TAGLINE_OR_SIGNATURE]</p>
-  </footer>
+    <!-- This iframe is where you’ll later embed a real Hugging Face app -->
+    <!-- For now, it’s a placeholder, so it won’t load anything. -->
+    <iframe 
+        src="https://huggingface.co/spaces/yourusername/yourproject"
+        title="Juke Joint ChatBot Demo">
+    </iframe>
+</section>
+
+<!-- ========================= OTHER PROJECTS SECTION ========================= -->
+<section>
+    <h2>Other Projects</h2>
+    <ul>
+        <li><strong>Blueprint Automation</strong> — AI-driven refund automation for Amazon Retail FinOps</li>
+        <li><strong>Collect Dashboard</strong> — Power Query + DAX system to visualize AR risk</li>
+        <li><strong>TariffGPT</strong> — Custom GPT agent that explains import tariffs and compliance</li>
+        <li><strong>DOGE Initiative</strong> — Department of Government Efficiency RPA rollout</li>
+    </ul>
+</section>
+
+<!-- ========================= CONTACT SECTION ========================= -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        📧 <a href="mailto:brnthood@gmail.com">brnthood@gmail.com</a><br>
+        💼 <a href="https://www.linkedin.com/in/bcolbyhood" target="_blank">LinkedIn: bcolbyhood</a><br>
+        🧠 <a href="https://github.com/bryanthood-wph" target="_blank">GitHub: bryanthood-wph</a>
+    </p>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer>
+    © 2025 Bryant Colby Hood — Built with HTML, CSS, and a questionable amount of caffeine.
+</footer>
+
 </body>
 </html>
