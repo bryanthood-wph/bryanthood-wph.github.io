@@ -14,7 +14,7 @@
   <title>Bryant “Colby” Hood | AI Automation & FinOps</title>
 
   <!-- Fonts: Bebas Neue for display, Inter for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ===== Design system ===== */
@@ -48,12 +48,14 @@
       line-height:.86; letter-spacing:.02em;
       margin:0; color:#fff; text-shadow:0 2px 0 rgba(0,0,0,.25);
     }
-    .nickname{
-      display:inline-block; padding:2px 10px; margin:0 6px;
-      border-radius:8px; color:#0b0c10;
-      background:linear-gradient(90deg,var(--cobalt),var(--money));
-      font-size:.85em; vertical-align:middle;
+      .nameplate{
+    font-family:"Oswald", system-ui, sans-serif;
+    font-weight:600;           /* was a single weight before */
+    letter-spacing:.03em;      /* slightly more spacing helps readability */
+    font-size:clamp(44px, 9vw, 100px);
+    line-height:.9;
     }
+
     .tagline{margin:10px 0 16px; color:var(--muted); font-weight:700}
     nav a{color:var(--cobalt); text-decoration:none; font-weight:800; margin:0 10px}
     nav a:hover{text-decoration:underline}
