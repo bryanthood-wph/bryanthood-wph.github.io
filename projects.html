@@ -4,18 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Bryant “Colby” Hood</title>
+
+  <!-- Updated font: Oswald -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root{--ink:#0b0c10;--paper:#0f1115;--elev:#161b22;--muted:#a7b0bd;--cobalt:#3da5ff;--money:#2ecc71;--shadow:0 14px 30px rgba(0,0,0,.35);--r:14px;--w:1100px}
-    *{box-sizing:border-box} html,body{margin:0;background:var(--paper);color:#e9eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    header{background:linear-gradient(180deg, rgba(61,165,255,.12), transparent 70%), var(--ink);border-bottom:3px solid var(--cobalt);padding:38px 18px 26px;text-align:center;position:sticky;top:0;z-index:10}
-    .nameplate{font-family:"Oswald", system-ui, sans-serif; font-weight:600; /* was a single weight before */ letter-spacing:.03em; /* slightly more spacing helps readability */ font-size:clamp(44px, 9vw, 100px); line-height:.9;}
-    .nickname{display:inline-block;padding:2px 10px;margin:0 6px;border-radius:8px;color:#0b0c10;background:linear-gradient(90deg,var(--cobalt),var(--money));font-size:.85em}
-    .tagline{margin:10px 0 16px;color:var(--muted);font-weight:700}
-    nav a{color:var(--cobalt);text-decoration:none;font-weight:800;margin:0 10px} nav a:hover{text-decoration:underline}
+    :root{
+      --ink:#0b0c10;
+      --paper:#0f1115;
+      --elev:#161b22;
+      --muted:#a7b0bd;
+      --cobalt:#3da5ff;
+      --money:#2ecc71;
+      --shadow:0 14px 30px rgba(0,0,0,.35);
+      --r:14px;
+      --w:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--paper);color:#e9eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+
+    /* Header with improved typography */
+    header{
+      background:linear-gradient(180deg, rgba(61,165,255,.10), transparent 70%), var(--ink);
+      border-bottom:2px solid rgba(61,165,255,.55);
+      padding:28px 16px 18px;
+      text-align:center;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(6px);
+    }
+    .nameplate{
+      font-family:"Oswald", system-ui, sans-serif;
+      font-weight:600;
+      letter-spacing:.03em;
+      font-size:clamp(42px, 8.2vw, 92px);
+      line-height:.9;
+      margin:0 0 6px;
+    }
+    .nameplate .quote{opacity:.75;font-weight:500}
+    .nickname{
+      display:inline-block;padding:2px 10px;margin:0 6px;border-radius:8px;
+      color:#0b0c10;background:linear-gradient(90deg,var(--cobalt),var(--money));
+      font-size:.85em;vertical-align:middle;
+    }
+    .tagline{margin:2px 0 10px;color:var(--muted);font-weight:700}
+    nav a{
+      color:var(--cobalt);text-decoration:none;font-weight:800;margin:0 12px;
+      padding:6px 2px;border-radius:6px;
+    }
+    nav a:hover{background:rgba(61,165,255,.10)}
+
+    /* Project grid styling */
     .wrap{max-width:var(--w);margin:36px auto;padding:0 18px}
     section{background:var(--elev);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);margin-bottom:22px}
-    h2{margin:0 0 12px} .muted{color:var(--muted)}
+    h2{margin:0 0 12px}.muted{color:var(--muted)}
     .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .card{border:1px solid rgba(255,255,255,.06);border-radius:12px;background:#11161f;overflow:hidden;display:flex;flex-direction:column}
     .thumb{height:160px;display:flex;align-items:center;justify-content:center;background:radial-gradient(80% 60% at 50% 40%, rgba(61,165,255,.20), rgba(46,204,113,.10) 60%, transparent 85%);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -31,7 +72,9 @@
 </head>
 <body>
   <header>
-    <h1 class="nameplate">Bryant <span class="nickname">“Colby”</span> Hood</h1>
+    <h1 class="nameplate">
+      Bryant <span class="quote">“</span><span class="nickname">Colby</span><span class="quote">”</span> Hood
+    </h1>
     <p class="tagline">AI automation • Finance ops • Analytics engineering</p>
     <nav>
       <a href="index.html">Home</a> |
@@ -47,58 +90,41 @@
       <p class="muted">Three placeholders point to legit interactive AI playgrounds. Swap links and text when your demos are ready.</p>
 
       <div class="grid">
-        <!-- Placeholder 1 -->
         <article class="card">
-          <div class="thumb" aria-hidden="true">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
-              <path d="M4 7h16M4 12h16M4 17h10" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="card-body">
             <span class="label">PLACEHOLDER</span>
             <h3 style="margin:10px 0 6px;color:#fff">Text-to-Image Playground</h3>
             <p class="muted">Explore SDXL and community image generators.</p>
           </div>
           <div class="actions">
-            <a class="btn primary" target="_blank" rel="noopener" href="https://huggingface.co/spaces">Open HF Spaces</a>
+            <a class="btn primary" target="_blank" href="https://huggingface.co/spaces">Open HF Spaces</a>
             <a class="btn" href="#">Details</a>
           </div>
         </article>
 
-        <!-- Placeholder 2 -->
         <article class="card">
-          <div class="thumb" aria-hidden="true">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8" stroke="#2ecc71" stroke-width="2"/>
-              <path d="M8 12h8M12 8v8" stroke="#2ecc71" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#2ecc71" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#2ecc71" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="card-body">
             <span class="label">PLACEHOLDER</span>
             <h3 style="margin:10px 0 6px;color:#fff">Model Sandbox</h3>
             <p class="muted">Run hosted demos across modalities.</p>
           </div>
           <div class="actions">
-            <a class="btn primary" target="_blank" rel="noopener" href="https://replicate.com/explore">Open Replicate</a>
+            <a class="btn primary" target="_blank" href="https://replicate.com/explore">Open Replicate</a>
             <a class="btn" href="#">Details</a>
           </div>
         </article>
 
-        <!-- Placeholder 3 -->
         <article class="card">
-          <div class="thumb" aria-hidden="true">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
-              <rect x="4" y="5" width="16" height="14" rx="2" stroke="#3da5ff" stroke-width="2"/>
-              <path d="M8 9h8M8 13h8" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#3da5ff" stroke-width="2"/><path d="M8 9h8M8 13h8" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/></svg></div>
           <div class="card-body">
             <span class="label">PLACEHOLDER</span>
             <h3 style="margin:10px 0 6px;color:#fff">Neural Net Playground</h3>
             <p class="muted">Interactively train tiny nets and visualize boundaries.</p>
           </div>
           <div class="actions">
-            <a class="btn primary" target="_blank" rel="noopener" href="https://playground.tensorflow.org/">Open TF Playground</a>
+            <a class="btn primary" target="_blank" href="https://playground.tensorflow.org/">Open TF Playground</a>
             <a class="btn" href="#">Details</a>
           </div>
         </article>
