@@ -4,88 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Bryant “Colby” Hood</title>
-
-  <!-- Updated font: Oswald (slimmer than Bebas Neue) -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#0b0c10;
-      --paper:#0f1115;
-      --elev:#161b22;
-      --muted:#a7b0bd;
+      --ink:#1c1f23;
+      --paper-gradient:linear-gradient(135deg,#f8fbfd 0%,#eef1f4 100%);
+      --card:#ffffff;
+      --muted:#5b616a;
+      --border:#e2e5e9;
       --cobalt:#3da5ff;
       --money:#2ecc71;
-      --shadow:0 14px 30px rgba(0,0,0,.35);
+      --shadow:0 4px 18px rgba(0,0,0,.08);
       --r:14px;
       --w:1000px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--paper);color:#e9eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    html,body{margin:0;background:var(--paper-gradient);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden;}
 
-    /* Header typography and spacing update */
     header{
-      background:linear-gradient(180deg, rgba(61,165,255,.10), transparent 70%), var(--ink);
-      border-bottom:2px solid rgba(61,165,255,.55);
-      padding:28px 16px 18px;
-      text-align:center;
-      position:sticky; top:0; z-index:10;
-      backdrop-filter:saturate(140%) blur(6px);
+      text-align:center;padding:36px 16px 24px;position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.9);backdrop-filter:saturate(150%) blur(8px);
+      border-bottom:1px solid var(--border);
     }
-    .nameplate{
-      font-family:"Oswald", system-ui, sans-serif;
-      font-weight:600;
-      letter-spacing:.03em;
-      font-size:clamp(42px, 8.2vw, 92px);
-      line-height:.9;
-      margin:0 0 6px;
-    }
-    .nameplate .quote{opacity:.75;font-weight:500}
-    .nickname{
-      display:inline-block;padding:2px 10px;margin:0 6px;border-radius:8px;
-      color:#0b0c10;background:linear-gradient(90deg,var(--cobalt),var(--money));
-      font-size:.85em;vertical-align:middle;
-    }
-    .tagline{margin:2px 0 10px;color:var(--muted);font-weight:700}
-    nav a{
-      color:var(--cobalt);text-decoration:none;font-weight:800;margin:0 12px;
-      padding:6px 2px;border-radius:6px;
-    }
-    nav a:hover{background:rgba(61,165,255,.10)}
+    .nameplate{font-family:"Oswald",system-ui,sans-serif;font-weight:600;letter-spacing:.02em;font-size:clamp(42px,8vw,92px);line-height:.9;margin:0;color:var(--ink);position:relative;display:inline-block;}
+    .nameplate::after{content:"";position:absolute;bottom:-8px;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--cobalt),var(--money),var(--cobalt));background-size:200% 100%;opacity:.6;animation:slideGradient 6s linear infinite;border-radius:2px;}
+    @keyframes slideGradient{0%{background-position:0 0;}100%{background-position:200% 0;}}
+    .nameplate .quote{opacity:.6;font-weight:500}
+    .nickname{display:inline-block;padding:2px 10px;margin:0 6px;border-radius:8px;color:#fff;background:linear-gradient(90deg,var(--cobalt),var(--money));font-size:.85em;vertical-align:middle}
+    .tagline{margin:8px 0 10px;color:var(--muted);font-weight:600;}
+    nav a{color:var(--cobalt);text-decoration:none;font-weight:700;margin:0 12px;padding:6px 2px;border-radius:6px;transition:background .2s ease}
+    nav a:hover{background:rgba(61,165,255,.12)}
 
-    /* Content styles */
     .wrap{max-width:var(--w);margin:36px auto;padding:0 18px}
-    section{background:var(--elev);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);margin-bottom:22px}
-    h2{margin:0 0 12px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);margin-bottom:26px;opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards;}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+    h2{margin:0 0 14px;color:var(--ink);position:relative;}
+    h2::after{content:"";display:block;height:2px;width:60px;margin-top:6px;background:linear-gradient(90deg,var(--cobalt),var(--money));border-radius:2px;}
     .muted{color:var(--muted)}
     .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(61,165,255,.12);color:var(--cobalt);font-size:12px;font-weight:900;letter-spacing:.3px;margin-right:8px;margin-bottom:8px}
     ul{margin:10px 0 0 20px}
-    footer{text-align:center;color:#9aa3b2;padding:24px 16px;border-top:1px solid rgba(255,255,255,.06)}
+    footer{text-align:center;color:var(--muted);padding:24px 16px;border-top:1px solid var(--border)}
   </style>
 </head>
 <body>
   <header>
-    <h1 class="nameplate">
-      Bryant <span class="quote">“</span><span class="nickname">Colby</span><span class="quote">”</span> Hood
-    </h1>
+    <h1 class="nameplate">Bryant <span class="quote">“</span><span class="nickname">Colby</span><span class="quote">”</span> Hood</h1>
     <p class="tagline">AI automation • Finance ops • Analytics engineering</p>
     <nav>
       <a href="index.html">Home</a> |
       <a href="projects.html">Projects</a> |
-      <a href="https://github.com/bryanthood-wph" target="_blank" rel="noopener">GitHub</a> |
-      <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" target="_blank">LinkedIn</a>
     </nav>
   </header>
 
   <main class="wrap">
     <section>
       <h2>Profile</h2>
-      <p>
-        Finance Ops leader at Amazon shipping automation that reduces cycle time, tightens controllership,
-        and gives operators real signal instead of dashboard glitter. I build with Python, RPA (UiPath, n8n),
-        Power Query/DAX, QuickSight, and LLMs to turn recurring work into reusable systems.
-      </p>
+      <p>Finance Ops leader at Amazon shipping automation that reduces cycle time, tightens controllership, and gives operators real signal instead of dashboard glitter. I build with Python, RPA (UiPath, n8n), Power Query/DAX, QuickSight, and LLMs to turn recurring work into reusable systems.</p>
       <p class="muted">Previously: Academy Sports + Outdoors, Lowe’s. MBA (Data Analytics), AWS Cloud Practitioner.</p>
     </section>
 
