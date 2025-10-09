@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Bryant “Colby” Hood</title>
+  <title>Home | B. Colby Hood, MBA</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -14,9 +14,10 @@
       --border:#e2e5e9;
       --cobalt:#3da5ff;
       --money:#2ecc71;
+      --accent:#2fbfa0;
       --shadow:0 4px 18px rgba(0,0,0,.08);
       --r:14px;
-      --w:1100px;
+      --w:1000px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--paper-gradient);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden;}
@@ -24,7 +25,8 @@
     header{text-align:center;padding:40px 16px 24px;position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--border);}
     .nameplate{font-family:"Oswald",system-ui,sans-serif;font-weight:600;letter-spacing:.02em;font-size:clamp(42px,8vw,92px);line-height:.9;margin:0;color:var(--ink);position:relative;display:inline-block;}
     .nameplate span.colby{font-family:"Inter",system-ui,sans-serif;font-weight:500;color:#163b52;}
-    .nameplate::after{content:"";position:absolute;bottom:-8px;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--cobalt),var(--money),var(--cobalt));background-size:200% 100%;opacity:.6;animation:slideGradient 8s linear infinite;border-radius:2px;}
+    .nameplate span.mba{font-family:"Inter",system-ui,sans-serif;font-weight:600;color:var(--accent);font-size:clamp(22px,2vw,26px);margin-left:8px;}
+    .nameplate::after{content:"";position:absolute;bottom:-8px;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--cobalt),var(--money),var(--cobalt));background-size:200% 100%;opacity:.6;animation:slideGradient 6s linear infinite;border-radius:2px;}
     @keyframes slideGradient{0%{background-position:0 0;}100%{background-position:200% 0;}}
     .quote{opacity:.4;font-weight:500;color:#999}
     .tagline{margin:12px 0 10px;color:var(--muted);font-weight:600;}
@@ -37,28 +39,18 @@
     h2{margin:0 0 14px;color:var(--ink);position:relative;}
     h2::after{content:"";display:block;height:2px;width:60px;margin-top:6px;background:linear-gradient(90deg,var(--cobalt),var(--money));border-radius:2px;}
     .muted{color:var(--muted)}
-
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg,#ffffff 0%,#f8f9fa 100%);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease;}
-    .card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
-    .thumb{height:160px;display:flex;align-items:center;justify-content:center;background:radial-gradient(80% 60% at 50% 40%,rgba(61,165,255,.1),rgba(46,204,113,.08) 60%,transparent 85%);border-bottom:1px solid var(--border)}
-    .thumb svg{opacity:.85}
-    .card-body{padding:16px}
-    .label{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.3px;color:#111;background:linear-gradient(90deg,#ffe08a,#ffc56e);padding:4px 8px;border-radius:999px}
-    .actions{margin-top:auto;padding:16px;display:flex;gap:10px}
-    .btn{flex:1;text-align:center;text-decoration:none;font-weight:800;padding:10px 12px;border-radius:10px;border:1px solid var(--border);color:var(--ink);background:#f7f8fa;transition:all .2s ease}
-    .btn.primary{background:linear-gradient(90deg,var(--cobalt),var(--money));color:#fff}
-    .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(61,165,255,.12);color:var(--cobalt);font-size:12px;font-weight:900;letter-spacing:.3px;margin-right:8px;margin-bottom:8px}
+    ul{margin:10px 0 0 20px}
     footer{text-align:center;color:var(--muted);padding:24px 16px;border-top:1px solid var(--border)}
   </style>
 </head>
 <body>
   <header>
-    <h1 class="nameplate">Bryant <span class="quote">“</span><span class="colby">Colby</span><span class="quote">”</span> Hood</h1>
+    <h1 class="nameplate">B. <span class="colby">Colby</span> Hood<span class="mba">, MBA</span></h1>
     <p class="tagline">AI automation • Finance ops • Analytics engineering</p>
     <nav>
-      <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
+      <a href="projects.html">Projects</a> |
       <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a> |
       <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" target="_blank">LinkedIn</a>
     </nav>
@@ -66,51 +58,29 @@
 
   <main class="wrap">
     <section>
-      <h2>Projects</h2>
-      <p class="muted">Interactive AI playgrounds and demo environments. Swap links when your hosted builds are live.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="card-body">
-            <span class="label">PLACEHOLDER</span>
-            <h3 style="margin:10px 0 6px">Text-to-Image Playground</h3>
-            <p class="muted">Explore community image generators and SDXL spaces.</p>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://huggingface.co/spaces" target="_blank">Open HF Spaces</a>
-            <a class="btn" href="#">Details</a>
-          </div>
-        </article>
+      <h2>Turning finance workflows into products</h2>
+      <p>FinOps leader building <b>automation</b> and <b>LLM-powered assistants</b> that cut cycle time, reduce manual review, and raise controllership. Stack: Python, UiPath, n8n, Power Query/DAX, QuickSight, Gradio.</p>
+      <p class="muted">Amazon Retail FinOps; previously Academy Sports + Outdoors and Lowe’s. Gym rat, youth coach, systems brain.</p>
+      <a class="badge" href="about.html">More about me</a>
+    </section>
 
-        <article class="card">
-          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#2ecc71" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#2ecc71" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="card-body">
-            <span class="label">PLACEHOLDER</span>
-            <h3 style="margin:10px 0 6px">Model Sandbox</h3>
-            <p class="muted">Run hosted demos across modalities.</p>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://replicate.com/explore" target="_blank">Open Replicate</a>
-            <a class="btn" href="#">Details</a>
-          </div>
-        </article>
+    <section>
+      <h2>Juke Joint Chatbot</h2>
+      <p class="muted">Domain-aware assistant for small business ops. Python • Gradio • LLMs. Deploy to Hugging Face when you’re ready.</p>
+      <div class="badge">PLACEHOLDER</div>
+      <p class="muted">Live demo coming soon. The embed is commented out to avoid 404 errors during development.</p>
+    </section>
 
-        <article class="card">
-          <div class="thumb"><svg width="72" height="72" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="#3da5ff" stroke-width="2"/><path d="M8 9h8M8 13h8" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="card-body">
-            <span class="label">PLACEHOLDER</span>
-            <h3 style="margin:10px 0 6px">Neural Net Playground</h3>
-            <p class="muted">Interactively train tiny nets and visualize boundaries.</p>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://playground.tensorflow.org/" target="_blank">Open TF Playground</a>
-            <a class="btn" href="#">Details</a>
-          </div>
-        </article>
-      </div>
+    <section>
+      <h2>Recent builds (placeholders for now)</h2>
+      <ul>
+        <li>Text-to-Image Playground</li>
+        <li>Model Sandbox</li>
+        <li>Neural Net Playground</li>
+      </ul>
     </section>
   </main>
 
-  <footer>© 2025 Bryant Colby Hood — Built on GitHub Pages.</footer>
+  <footer>© 2025 B. Colby Hood, MBA — Built on GitHub Pages.</footer>
 </body>
 </html>
