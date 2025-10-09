@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Bryant Colby Hood</title>
+
+    <!-- Same design system as other pages -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #222;
+        }
+        header {
+            background-color: #111;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 4px solid #2ecc71;
+        }
+        nav a {
+            color: #2ecc71;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #111;
+            color: #aaa;
+            font-size: 14px;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .highlight {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Projects by Bryant “Colby” Hood</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+<section>
+    <h2 class="highlight">Juke Joint ChatBot</h2>
+    <p>
+        A conversational GPT-based chatbot designed to emulate a personable assistant for small business owners.  
+        Built in <strong>Python</strong> and <strong>Gradio</strong>, hosted on <strong>Hugging Face Spaces</strong>.  
+        Incorporates humor, efficiency, and financial analysis capabilities.
+    </p>
+</section>
+
+<section>
+    <h2 class="highlight">Blueprint Automation</h2>
+    <p>
+        Automation framework at Amazon that accelerates refund validation and contra-COGS cleanup.  
+        Integrated <strong>UiPath</strong> with <strong>internal AR/AP datasets</strong> and improved throughput 40%.
+    </p>
+</section>
+
+<section>
+    <h2 class="highlight">Collect Dashboard</h2>
+    <p>
+        A <strong>Power Query + DAX</strong> dashboard that consolidates open invoice data across regions, providing
+        daily insight into collection risk and opportunities for automation.  
+        Designed to be simple, dynamic, and CFO-ready.
+    </p>
+</section>
+
+<section>
+    <h2 class="highlight">TariffGPT</h2>
+    <p>
+        A specialized GPT assistant that explains import tariffs and government efficiency program (DOGE) policies in plain English.  
+        Uses <strong>OpenAI API</strong> for natural-language Q&A and <strong>Python Flask</strong> for API routing.
+    </p>
+</section>
+
+<section>
+    <h2 class="highlight">DOGE Automation Initiative</h2>
+    <p>
+        Department of Government Efficiency (DOGE) project streamlining holdback reconciliations with robotic process automation.  
+        Improved accuracy while cutting manual review hours by 70%.
+    </p>
+</section>
+
+<footer>
+    © 2025 Bryant Colby Hood — Building smarter systems, one process at a time.
+</footer>
+
+</body>
+</html>
