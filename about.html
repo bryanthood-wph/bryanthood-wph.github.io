@@ -1,105 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Bryant Colby Hood</title>
-
-    <!-- Shared CSS so the look matches index.html -->
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: #222;
-        }
-        header {
-            background-color: #111;
-            color: white;
-            padding: 25px 0;
-            text-align: center;
-            border-bottom: 4px solid #2ecc71;
-        }
-        nav a {
-            color: #2ecc71;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background-color: #111;
-            color: #aaa;
-            font-size: 14px;
-        }
-        h1, h2 {
-            color: #111;
-        }
-        .highlight {
-            color: #2ecc71;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Bryant “Colby” Hood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0b0c10;--paper:#0f1115;--elev:#161b22;--muted:#a7b0bd;--cobalt:#3da5ff;--money:#2ecc71;--shadow:0 14px 30px rgba(0,0,0,.35);--r:14px;--w:1000px}
+    *{box-sizing:border-box} html,body{margin:0;background:var(--paper);color:#e9eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    header{background:linear-gradient(180deg, rgba(61,165,255,.12), transparent 70%), var(--ink);border-bottom:3px solid var(--cobalt);padding:38px 18px 26px;text-align:center;position:sticky;top:0;z-index:10}
+    .nameplate{font-family:"Bebas Neue",system-ui,sans-serif;font-size:clamp(44px,9vw,92px);line-height:.86;margin:0}
+    .nickname{display:inline-block;padding:2px 10px;margin:0 6px;border-radius:8px;color:#0b0c10;background:linear-gradient(90deg,var(--cobalt),var(--money));font-size:.85em}
+    .tagline{margin:10px 0 16px;color:var(--muted);font-weight:700}
+    nav a{color:var(--cobalt);text-decoration:none;font-weight:800;margin:0 10px} nav a:hover{text-decoration:underline}
+    .wrap{max-width:var(--w);margin:36px auto;padding:0 18px}
+    section{background:var(--elev);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);margin-bottom:22px}
+    h2{margin:0 0 12px} .muted{color:var(--muted)}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(61,165,255,.12);color:var(--cobalt);font-size:12px;font-weight:900;letter-spacing:.3px;margin-right:8px;margin-bottom:8px}
+    ul{margin:10px 0 0 20px}
+    footer{text-align:center;color:#9aa3b2;padding:24px 16px;border-top:1px solid rgba(255,255,255,.06)}
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>About Bryant “Colby” Hood</h1>
+  <header>
+    <h1 class="nameplate">Bryant <span class="nickname">“Colby”</span> Hood</h1>
+    <p class="tagline">AI automation • Finance ops • Analytics engineering</p>
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="projects.html">Projects</a> |
-        <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a>
+      <a href="index.html">Home</a> |
+      <a href="projects.html">Projects</a> |
+      <a href="https://github.com/bryanthood-wph" target="_blank" rel="noopener">GitHub</a> |
+      <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
-</header>
+  </header>
 
-<section>
-    <h2>Background</h2>
-    <p>
-        I’m a Finance Operations Manager at Amazon overseeing automation programs that manage billions in revenue and contra-COGS flows.  
-        My focus is on bridging finance, analytics, and tech — translating financial complexity into streamlined, data-driven systems.
-    </p>
-    <p>
-        Before Amazon, I worked across corporate finance and retail operations at Academy Sports + Outdoors and Lowe’s.  
-        Over time, I’ve grown obsessed with <strong>controllership</strong>, <strong>process optimization</strong>, and <strong>AI-assisted decisioning</strong>.
-    </p>
-</section>
+  <main class="wrap">
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Finance Ops leader at Amazon shipping automation that reduces cycle time, tightens controllership,
+        and gives operators real signal instead of dashboard glitter. I build with Python, RPA (UiPath, n8n),
+        Power Query/DAX, QuickSight, and LLMs to turn recurring work into reusable systems.
+      </p>
+      <p class="muted">Previously: Academy Sports + Outdoors, Lowe’s. MBA (Data Analytics), AWS Cloud Practitioner.</p>
+    </section>
 
-<section>
-    <h2>Focus Areas</h2>
-    <ul>
-        <li>AI and RPA integration for finance workflows (UiPath, n8n, Python)</li>
-        <li>Analytics and visualization (Power Query, DAX, Quicksight)</li>
-        <li>Automation of AR/AP processes and data pipelines</li>
-        <li>Building internal GPT assistants for FinOps and business teams</li>
-    </ul>
-</section>
+    <section>
+      <h2>Core Strengths</h2>
+      <div class="grid">
+        <div>
+          <span class="badge">Automation</span>
+          <ul>
+            <li>UiPath, n8n, Zapier orchestration</li>
+            <li>Python scripting and services</li>
+            <li>LLM agents (OpenAI, Gradio)</li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge">Analytics</span>
+          <ul>
+            <li>Power Query, DAX, QuickSight</li>
+            <li>SQL and Excel modeling</li>
+            <li>Operational metrics & alerting</li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge">FinOps</span>
+          <ul>
+            <li>AR/AP optimization & policy</li>
+            <li>Contra-COGS & revenue integrity</li>
+            <li>Controls, auditability, scale</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section>
-    <h2>Philosophy</h2>
-    <blockquote>
-        “Automation isn’t about replacing people — it’s about freeing them from repetition so they can actually think.”
-    </blockquote>
-    <p>
-        My approach is pragmatic: simplify data flows, build scalable logic, and automate where it matters.  
-        If it saves time, reduces risk, or increases insight, it’s worth building.
-    </p>
-</section>
+    <section>
+      <h2>Operating Principles</h2>
+      <ul>
+        <li>Ship small, measurable wins; stack them into platforms.</li>
+        <li>Design for audit trails and reversibility, not heroics.</li>
+        <li>Automate what repeats, expose what matters, delete the rest.</li>
+      </ul>
+    </section>
+  </main>
 
-<footer>
-    © 2025 Bryant Colby Hood — Finance Ops meets AI.
-</footer>
-
+  <footer>© 2025 Bryant Colby Hood — Built on GitHub Pages.</footer>
 </body>
 </html>
