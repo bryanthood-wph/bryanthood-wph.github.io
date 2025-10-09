@@ -1,147 +1,218 @@
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryant Colby Hood | AI Automation & FinOps Portfolio</title>
+  <!--
+    Bryant “Colby” Hood — Portfolio
+    Design goals:
+      • Big, confident nameplate (Bebas Neue)
+      • High-contrast dark UI (charcoal), electric cobalt for signal, finance green for accent
+      • Zero external build steps; all CSS inline so GitHub Pages “just works”
+      • Placeholder projects link to legit interactive AI playgrounds until you swap your own
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bryant “Colby” Hood | AI Automation & FinOps</title>
 
-    <!-- Basic styling for readability and layout -->
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: #222;
-        }
-        header {
-            background-color: #111;
-            color: white;
-            padding: 25px 0;
-            text-align: center;
-            border-bottom: 4px solid #2ecc71;
-        }
-        nav a {
-            color: #2ecc71;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 600px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background-color: #111;
-            color: #aaa;
-            font-size: 14px;
-        }
-        h1, h2, h3 {
-            color: #111;
-        }
-        .highlight {
-            color: #2ecc71;
-        }
-    </style>
+  <!-- Fonts: Bebas Neue for display, Inter for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Design system ===== */
+    :root{
+      --ink:#0b0c10;           /* deep charcoal */
+      --paper:#0f1115;         /* app background */
+      --elev:#161b22;          /* card surface */
+      --muted:#a7b0bd;         /* secondary text */
+      --cobalt:#3da5ff;        /* primary accent */
+      --money:#2ecc71;         /* secondary (finance) accent */
+      --ring:rgba(61,165,255,.45);
+      --shadow:0 14px 30px rgba(0,0,0,.35);
+      --r:14px;                /* border radius */
+      --w:1100px;              /* max content width */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--paper);color:#e9eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+
+    /* ===== Header / nameplate ===== */
+    header{
+      background:linear-gradient(180deg, rgba(61,165,255,.12), transparent 70%), var(--ink);
+      border-bottom:3px solid var(--cobalt);
+      padding:38px 18px 28px;
+      text-align:center;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(6px);
+    }
+    .nameplate{
+      font-family:"Bebas Neue", system-ui, sans-serif;
+      font-size:clamp(44px, 9vw, 100px);
+      line-height:.86; letter-spacing:.02em;
+      margin:0; color:#fff; text-shadow:0 2px 0 rgba(0,0,0,.25);
+    }
+    .nickname{
+      display:inline-block; padding:2px 10px; margin:0 6px;
+      border-radius:8px; color:#0b0c10;
+      background:linear-gradient(90deg,var(--cobalt),var(--money));
+      font-size:.85em; vertical-align:middle;
+    }
+    .tagline{margin:10px 0 16px; color:var(--muted); font-weight:700}
+    nav a{color:var(--cobalt); text-decoration:none; font-weight:800; margin:0 10px}
+    nav a:hover{text-decoration:underline}
+
+    /* ===== Layout ===== */
+    .wrap{max-width:var(--w); margin:36px auto; padding:0 18px}
+    section{background:var(--elev); border:1px solid rgba(255,255,255,.06); border-radius:var(--r); padding:26px; box-shadow:var(--shadow); margin-bottom:22px}
+    h2{margin:0 0 12px}
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(61,165,255,.12); color:var(--cobalt); font-size:12px; font-weight:900; letter-spacing:.3px}
+    .muted{color:var(--muted)}
+    .cta{display:inline-block; padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--money),var(--cobalt)); color:#0b0c10; text-decoration:none; font-weight:900; letter-spacing:.3px}
+    .cta:hover{filter:brightness(1.05)}
+
+    /* ===== Project grid ===== */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{border:1px solid rgba(255,255,255,.06); border-radius:12px; background:#11161f; overflow:hidden; display:flex; flex-direction:column}
+    .thumb{
+      height:160px; display:flex; align-items:center; justify-content:center;
+      background:radial-gradient(80% 60% at 50% 40%, rgba(61,165,255,.20), rgba(46,204,113,.10) 60%, transparent 85%);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .thumb svg{opacity:.9}
+    .card-body{padding:16px}
+    .label{display:inline-block; font-size:11px; font-weight:900; letter-spacing:.3px; color:#111; background:linear-gradient(90deg,#ffe08a,#ffc56e); padding:4px 8px; border-radius:999px}
+    .actions{margin-top:auto; padding:16px; display:flex; gap:10px}
+    .btn{
+      flex:1; text-align:center; text-decoration:none; font-weight:800; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.08);
+      color:#e9eef6; background:#141a23;
+    }
+    .btn.primary{background:linear-gradient(90deg,var(--cobalt),var(--money)); color:#0b0c10}
+    .btn:hover{filter:brightness(1.06); border-color:var(--ring)}
+
+    footer{text-align:center; color:#9aa3b2; padding:24px 16px; border-top:1px solid rgba(255,255,255,.06)}
+  </style>
 </head>
 
 <body>
-
-<!-- ========================= HEADER ========================= -->
-<header>
-    <h1>Bryant “Colby” Hood</h1>
-    <p>Finance Ops Leader | AI Automation Builder | Analytics Engineer</p>
-    <!-- Simple navigation bar linking to internal sections -->
+  <!-- ===== HERO ===== -->
+  <header>
+    <h1 class="nameplate">
+      Bryant <span class="nickname">“Colby”</span> Hood
+    </h1>
+    <p class="tagline">AI automation • Finance ops • Analytics engineering</p>
     <nav>
-        <a href="#about">About</a> |
-        <a href="#projects">Projects</a> |
-        <a href="#contact">Contact</a> |
-        <a href="https://github.com/bryanthood-wph" target="_blank">GitHub</a>
+      <a href="about.html">About</a> |
+      <a href="projects.html">Projects</a> |
+      <a href="https://github.com/bryanthood-wph" target="_blank" rel="noopener">GitHub</a> |
+      <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
-</header>
+  </header>
 
-<!-- ========================= ABOUT SECTION ========================= -->
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I’m a <strong>Finance Operations leader</strong> at Amazon, driving automation and analytics
-        across Retail AR, contra-COGS, and global FinOps programs. I’m obsessed with using 
-        <strong>data, RPA, and AI workflows</strong> to make large-scale business processes faster, 
-        smarter, and more controllable.
-    </p>
-    <p>
-        Over the last decade, I’ve led teams and built systems across <strong>retail, analytics, 
-        and operations</strong> at organizations like Amazon, Academy Sports + Outdoors, and Lowe’s.  
-        I specialize in integrating <strong>Python, Power Query, DAX, Quicksight, UiPath, and LLM-based automations</strong> 
-        to streamline workflows and reduce friction between finance and tech.
-    </p>
-    <ul>
-        <li>⚙️ RPA: UiPath, n8n, Zapier</li>
-        <li>📊 Data Analytics: Power Query, DAX, Quicksight, Excel modeling</li>
-        <li>🤖 AI Agents: Hugging Face, OpenAI API, Gradio</li>
-        <li>💡 Process Optimization & Decision Automation</li>
-    </ul>
-</section>
+  <main class="wrap">
+    <!-- ===== ABOUT BLURB ===== -->
+    <section id="about">
+      <span class="pill">ABOUT</span>
+      <h2>Turning finance workflows into products</h2>
+      <p>
+        FinOps leader building <strong>automation</strong> and <strong>LLM-powered assistants</strong> that cut cycle time,
+        reduce manual review, and raise controllership. Stack: Python, UiPath, n8n, Power Query/DAX, QuickSight, Gradio.
+      </p>
+      <p class="muted">Amazon Retail FinOps; previously Academy Sports + Outdoors and Lowe’s. Gym rat, youth coach, systems brain.</p>
+      <a class="cta" href="about.html">More about me</a>
+    </section>
 
-<!-- ========================= FEATURED PROJECT SECTION ========================= -->
-<section id="projects">
-    <h2>Featured Project</h2>
-    <h3 class="highlight">Juke Joint ChatBot</h3>
-    <p>
-        A conversational AI assistant that blends humor, personality, and domain knowledge to 
-        deliver real-time insights for small business operators.  
-        <br><strong>Built using:</strong> GPT-4o, Gradio, and Python.  
-        <br><strong>Deployed on:</strong> Hugging Face Spaces.
-    </p>
+    <!-- ===== FEATURED PROJECT (demo embed later) ===== -->
+    <section id="featured">
+      <span class="pill">FEATURED</span>
+      <h2>Juke Joint Chatbot</h2>
+      <p class="muted">Domain-aware assistant for small business ops. Python • Gradio • LLMs. Deploy to Hugging Face when you’re ready.</p>
 
-    <!-- This iframe is where you’ll later embed a real Hugging Face app -->
-    <!-- For now, it’s a placeholder, so it won’t load anything. -->
-    <iframe 
-        src="https://huggingface.co/spaces/yourusername/yourproject"
-        title="Juke Joint ChatBot Demo">
-    </iframe>
-</section>
+      <!-- Paste your real Hugging Face Space URL into the iframe below and remove the surrounding comment.
+      <iframe src="https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE"
+              title="Juke Joint Demo"
+              style="width:100%; height:600px; border:none; border-radius:12px"></iframe>
+      -->
 
-<!-- ========================= OTHER PROJECTS SECTION ========================= -->
-<section>
-    <h2>Other Projects</h2>
-    <ul>
-        <li><strong>Blueprint Automation</strong> — AI-driven refund automation for Amazon Retail FinOps</li>
-        <li><strong>Collect Dashboard</strong> — Power Query + DAX system to visualize AR risk</li>
-        <li><strong>TariffGPT</strong> — Custom GPT agent that explains import tariffs and compliance</li>
-        <li><strong>DOGE Initiative</strong> — Department of Government Efficiency RPA rollout</li>
-    </ul>
-</section>
+      <div class="card" style="margin-top:12px">
+        <div class="card-body">
+          <span class="label">PLACEHOLDER</span>
+          <p class="muted" style="margin-top:8px">Live demo coming soon. The embed is commented out to avoid the 404 you saw earlier.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- ========================= CONTACT SECTION ========================= -->
-<section id="contact">
-    <h2>Contact</h2>
-    <p>
-        📧 <a href="mailto:brnthood@gmail.com">brnthood@gmail.com</a><br>
-        💼 <a href="https://www.linkedin.com/in/bcolbyhood" target="_blank">LinkedIn: bcolbyhood</a><br>
-        🧠 <a href="https://github.com/bryanthood-wph" target="_blank">GitHub: bryanthood-wph</a>
-    </p>
-</section>
+    <!-- ===== THREE PLACEHOLDER PROJECTS (link to real, safe AI playgrounds) ===== -->
+    <section id="projects">
+      <span class="pill">PROJECTS</span>
+      <h2>Recent builds (placeholders for now)</h2>
 
-<!-- ========================= FOOTER ========================= -->
-<footer>
-    © 2025 Bryant Colby Hood — Built with HTML, CSS, and a questionable amount of caffeine.
-</footer>
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="thumb" aria-hidden="true">
+            <!-- Simple SVG icon for visual weight -->
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
+              <path d="M4 7h16M4 12h16M4 17h10" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="label">PLACEHOLDER</span>
+            <h3 style="margin:10px 0 6px">Text-to-Image Playground</h3>
+            <p class="muted">Explore community image generators and SDXL spaces.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://huggingface.co/spaces">Open HF Spaces</a>
+            <a class="btn" href="projects.html">Project page</a>
+          </div>
+        </article>
 
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="#2ecc71" stroke-width="2"/>
+              <path d="M8 12h8M12 8v8" stroke="#2ecc71" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="label">PLACEHOLDER</span>
+            <h3 style="margin:10px 0 6px">Model Sandbox</h3>
+            <p class="muted">Browse and run hosted AI demos across modalities.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://replicate.com/explore">Open Replicate</a>
+            <a class="btn" href="projects.html">Project page</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="thumb" aria-hidden="true">
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="5" width="16" height="14" rx="2" stroke="#3da5ff" stroke-width="2"/>
+              <path d="M8 9h8M8 13h8" stroke="#3da5ff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="label">PLACEHOLDER</span>
+            <h3 style="margin:10px 0 6px">Neural Net Playground</h3>
+            <p class="muted">Interactively train tiny nets and visualize decision boundaries.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://playground.tensorflow.org/">Open TF Playground</a>
+            <a class="btn" href="projects.html">Project page</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <span class="pill">CONTACT</span>
+      <h2>Get in touch</h2>
+      <p>Email: <a href="mailto:brnthood@gmail.com" style="color:var(--money)">brnthood@gmail.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/colby-hood-mba-336156150/" style="color:var(--cobalt)" target="_blank" rel="noopener">bcolbyhood</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Bryant Colby Hood — Built on GitHub Pages. Automated on principle.
+  </footer>
 </body>
 </html>
