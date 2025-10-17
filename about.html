@@ -104,5 +104,53 @@
   </main>
 
   <footer>© 2025 Bryant Colby Hood — Built on GitHub Pages.</footer>
+  <!-- Career Strategy AI Embed -->
+<section id="career-ai">
+  <h2>Career Strategy AI</h2>
+  <p>
+    Explore how I approach strategic finance, automation, and leadership decisions
+    through an interactive AI experience below. If you’d like me to follow up,
+    leave your contact info in the chat.
+  </p>
+
+  <div class="embed-wrap">
+    <iframe
+      src="https://hoodbc-career-chat-bot.hf.space"
+      title="Career Strategy AI"
+      allow="camera; microphone; clipboard-read; clipboard-write"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+    ></iframe>
+  </div>
+
+  <noscript>
+    <p>
+      JavaScript is disabled. Open the bot directly:
+      <a href="https://hoodbc-career-chat-bot.hf.space">Career Strategy AI</a>.
+    </p>
+  </noscript>
+</section>
+
+<style>
+  /* Embed styling. Safe to paste anywhere in about.html */
+  #career-ai { margin-top: 40px; text-align: center; }
+  .embed-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding-top: 56.25%; /* 16:9 aspect ratio prevents weird sizing */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: #0b1220; /* hides letterbox while loading */
+  }
+  .embed-wrap iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+</style>
+
 </body>
 </html>
