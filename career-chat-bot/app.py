@@ -257,7 +257,13 @@ def chat(message, history):
 # - Users can interact with the AI assistant while it records interactions
 # - The AI can send push notifications to your phone when users engage
 
-demo = gr.ChatInterface(chat, type="messages")
+demo = gr.ChatInterface(
+    chat, 
+    type="messages",
+    examples=None,
+    title="Ask Me Anything about My Career",
+    description="I'm Colby Hood, here to discuss my professional background, career, and skills. How can I assist you today?"
+)
 
 # For Render deployment: launch with proper host/port binding
 if __name__ == "__main__":
