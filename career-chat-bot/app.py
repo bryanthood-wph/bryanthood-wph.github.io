@@ -204,6 +204,10 @@ Chat as Colby Hood. Follow these rules strictly."""
 # - This enables the AI to use push notifications and record interactions
 
 def chat(message, history):
+    # Show greeting on first interaction (empty history)
+    if not history:
+        return "I'm Colby Hood, here to discuss my professional background, career, and skills. How can I assist you today?"
+    
     # Track user engagement for smart contact prompting
     global conversation_count
     if 'conversation_count' not in globals():
@@ -257,13 +261,10 @@ def chat(message, history):
 # - Users can interact with the AI assistant while it records interactions
 # - The AI can send push notifications to your phone when users engage
 
-seed_msg = "I'm Colby Hood, here to discuss my professional background, career, and skills. How can I assist you today?"
-chatbot = gr.Chatbot(value=[(None, seed_msg)], height=320)
-
 demo = gr.ChatInterface(
     chat,
     type="messages",
-    chatbot=chatbot,
+    height=280,
     title="Ask Me Anything about My Career",
     examples=None
 )
