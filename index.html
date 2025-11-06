@@ -116,10 +116,7 @@
         position: relative;
         width: 100%;
         min-width: 320px;
-        /* Reduced by 1/3: 240px min, 32% viewport, 347px max */
-        height: clamp(240px, 32vh, 347px);
-        /* Modern mobile support (prevents iOS toolbar vh bugs) */
-        height: clamp(240px, 32svh, 347px);
+        height: 420px;          /* Fixed height: 280px chat + 60px header + 80px input */
         border-radius: 12px;
         overflow: hidden;        /* No outer scrollbars - Gradio handles internal scrolling */
         margin-top: 12px;
@@ -135,10 +132,10 @@
         border: 0;
       }
 
-      /* Very small phones - slightly tighter */
-      @media (max-width: 400px) {
+      /* Mobile - slightly smaller */
+      @media (max-width: 768px) {
         .embed-wrap {
-          height: clamp(220px, 36svh, 320px);
+          height: 380px;        /* Slightly tighter on mobile */
         }
       }
     </style>
