@@ -3,6 +3,7 @@ services:
     name: career-chat-bot
     env: python
     plan: free
+    rootDir: career-chat-bot
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
     autoDeploy: true
@@ -13,4 +14,3 @@ services:
         sync: false
       - key: PUSHOVER_TOKEN
         sync: false
-
