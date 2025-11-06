@@ -114,12 +114,14 @@
       .embed-wrap {
         position: relative;
         width: 100%;
-        min-height: 275px;   /* desktop baseline */
-        height: 30vh;        /* dynamic scaling */
+        min-width: 320px;        /* Prevent too-narrow mobile */
+        height: 650px;           /* Comfortable height for Gradio UI */
+        max-height: 75vh;        /* Cap at 75% to prevent viewport dominance */
         border-radius: 12px;
         overflow: hidden;
         margin-top: 12px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        background: #f5f5f5;     /* Loading state background */
       }
 
       .embed-wrap iframe {
@@ -130,10 +132,35 @@
         border: 0;
       }
 
+      /* Tablet landscape & small laptops */
+      @media (max-width: 1024px) and (max-height: 900px) {
+        .embed-wrap {
+          height: 550px;
+          max-height: 65vh;
+        }
+      }
+
+      /* Tablet portrait */
       @media (max-width: 768px) {
         .embed-wrap {
-          min-height: 240px;
-          height: 35vh;
+          height: 500px;
+          max-height: 60vh;      /* More conservative */
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 480px) {
+        .embed-wrap {
+          height: 450px;         /* Shorter on small phones */
+          max-height: 55vh;
+        }
+      }
+
+      /* Large desktop */
+      @media (min-width: 1200px) {
+        .embed-wrap {
+          height: 700px;
+          max-height: 80vh;      /* Can be taller here */
         }
       }
     </style>
