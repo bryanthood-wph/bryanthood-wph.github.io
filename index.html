@@ -109,19 +109,22 @@
         padding: 20px 24px;
         margin: 24px auto;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        overflow: visible;       /* Prevent card-level scrolling */
       }
 
       .embed-wrap {
         position: relative;
         width: 100%;
-        min-width: 320px;        /* Prevent too-narrow mobile */
-        height: 400px;           /* Compact height - ~60% of original */
-        max-height: 50vh;        /* Cap at 50% to save viewport space */
+        min-width: 320px;
+        /* Single responsive rule: 360px min, 48% viewport, 520px max */
+        height: clamp(360px, 48vh, 520px);
+        /* Modern mobile support (prevents iOS toolbar vh bugs) */
+        height: clamp(360px, 48svh, 520px);
         border-radius: 12px;
-        overflow: hidden;
+        overflow: hidden;        /* No outer scrollbars - Gradio handles internal scrolling */
         margin-top: 12px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        background: #f5f5f5;     /* Loading state background */
+        background: #f5f5f5;    /* Loading state background */
       }
 
       .embed-wrap iframe {
@@ -132,35 +135,10 @@
         border: 0;
       }
 
-      /* Tablet landscape & small laptops */
-      @media (max-width: 1024px) and (max-height: 900px) {
+      /* Very small phones - slightly tighter */
+      @media (max-width: 400px) {
         .embed-wrap {
-          height: 350px;
-          max-height: 45vh;
-        }
-      }
-
-      /* Tablet portrait */
-      @media (max-width: 768px) {
-        .embed-wrap {
-          height: 320px;
-          max-height: 40vh;      /* More conservative */
-        }
-      }
-
-      /* Mobile */
-      @media (max-width: 480px) {
-        .embed-wrap {
-          height: 300px;         /* Compact on small phones */
-          max-height: 40vh;
-        }
-      }
-
-      /* Large desktop */
-      @media (min-width: 1200px) {
-        .embed-wrap {
-          height: 450px;
-          max-height: 55vh;      /* Slightly taller but still compact */
+          height: clamp(330px, 54svh, 480px);
         }
       }
     </style>
