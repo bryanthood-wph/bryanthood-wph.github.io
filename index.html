@@ -115,8 +115,8 @@
         position: relative;
         width: 100%;
         min-width: 320px;        /* Prevent too-narrow mobile */
-        height: 650px;           /* Comfortable height for Gradio UI */
-        max-height: 75vh;        /* Cap at 75% to prevent viewport dominance */
+        height: 400px;           /* Compact height - ~60% of original */
+        max-height: 50vh;        /* Cap at 50% to save viewport space */
         border-radius: 12px;
         overflow: hidden;
         margin-top: 12px;
@@ -135,32 +135,32 @@
       /* Tablet landscape & small laptops */
       @media (max-width: 1024px) and (max-height: 900px) {
         .embed-wrap {
-          height: 550px;
-          max-height: 65vh;
+          height: 350px;
+          max-height: 45vh;
         }
       }
 
       /* Tablet portrait */
       @media (max-width: 768px) {
         .embed-wrap {
-          height: 500px;
-          max-height: 60vh;      /* More conservative */
+          height: 320px;
+          max-height: 40vh;      /* More conservative */
         }
       }
 
       /* Mobile */
       @media (max-width: 480px) {
         .embed-wrap {
-          height: 450px;         /* Shorter on small phones */
-          max-height: 55vh;
+          height: 300px;         /* Compact on small phones */
+          max-height: 40vh;
         }
       }
 
       /* Large desktop */
       @media (min-width: 1200px) {
         .embed-wrap {
-          height: 700px;
-          max-height: 80vh;      /* Can be taller here */
+          height: 450px;
+          max-height: 55vh;      /* Slightly taller but still compact */
         }
       }
     </style>
